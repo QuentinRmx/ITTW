@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:ITTW.ViewModels"
         mc:Ignorable="d"
-        prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
+        Title="{Binding WindowTitle}" Height="350" Width="525">
     <Window.DataContext>
         <viewModels:MainWindowViewModel/>
     </Window.DataContext>
@@ -19,7 +18,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-        <Label Grid.Row="0" Content="{Binding TextTimer}"></Label>
-        <Button Grid.Row="1" Command="{Binding StartTimerCommand}">Start</Button>
+        <Label Name="LabelTimer"  Grid.Row="0" Content="{Binding TextTimer}"></Label>
+        <Button Name="ButtonTriggerTimer" Grid.Row="1" Command="{Binding TriggerTimerCommand}" Content="{Binding TextButtonTriggerTimer}"></Button>
     </Grid>
 </Window>
