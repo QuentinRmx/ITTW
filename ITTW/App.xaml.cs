@@ -1,6 +1,7 @@
 ﻿using Prism.Ioc;
 using ITTW.Views;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace ITTW
 {
