@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Threading;
-using ITTW.Classes;
 using Prism.Commands;
 using Prism.Mvvm;
 
@@ -53,8 +51,14 @@ namespace ITTW.ViewModels
         /// </summary>
         private long TimeLeftMs => _timeLeft.Ticks / TimeSpan.TicksPerMillisecond;
 
+        /// <summary>
+        /// Text displayed by the Button TriggerButton in MainWindow.xaml.
+        /// </summary>
         private string _textButtonTriggerTimer = "Start";
 
+        /// <summary>
+        /// Text displayed by the Button TriggerButton in MainWindow.xaml.
+        /// </summary>
         public string TextButtonTriggerTimer
         {
             get => _textButtonTriggerTimer;
@@ -131,7 +135,7 @@ namespace ITTW.ViewModels
         /// <param name="timer"></param>
         public void SetTimer(DispatcherTimer timer)
         {
-            _timeLeft = _maxTime = new DateTime(1, 1, 1, 0, 0, 30);
+            _timeLeft = _maxTime = new DateTime(1, 1, 1, 0, 0, 10);
             _timer = timer;
             _timer.Interval = TimeSpan.FromMilliseconds(TimerIntervalMs);
             _timer.Tick += Timer_Tick;
